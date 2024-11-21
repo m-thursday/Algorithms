@@ -51,7 +51,7 @@ vector<int> searchShortestPath(Graph &G, int start, int passBy, int destination)
 	vector<int> mid_to_dest = searchSinglePath(G, passBy, destination);
 	
 	vector<int> path_of_destiny = start_to_mid;
-	path_of_destiny.insert(path_of_destiny.end(), mid_to_dest.begin(), mid_to_dest.end());
+	path_of_destiny.insert(path_of_destiny.end(), mid_to_dest.begin() + 1, mid_to_dest.end());
 	
 	return path_of_destiny;
 }
