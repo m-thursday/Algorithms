@@ -3,9 +3,8 @@
 #include <queue>
 #include <climits>
 
-using namespace std;
 
-std::vector<Edge> constructMSTPrim(Graph G) {
+vector<Edge> constructMSTPrim(Graph G) {
 
 	vector<Edge> edges = G.exportEdges();
 	vector<Edge> MST;
@@ -32,9 +31,11 @@ std::vector<Edge> constructMSTPrim(Graph G) {
 		}
 	}
 	
+	// set base values for min distance and u
 	int minDistance = INT_MAX;
 	int u = -1;
 	
+	// check for shortest adjacent edge
 	for(int v = 0; v < G.n; v++){
 		if(visited[v] == 0 && distance[v] < minDistance){
 			minDistance = distance[v];
@@ -46,16 +47,17 @@ std::vector<Edge> constructMSTPrim(Graph G) {
 	if (u == -1){
 		break;
 	}
-		
+	
+	// set values
 	visited[u] = 1;
 	Edge m(parent[u], u, distance[u]);
 	MST.push_back(m);
 	
-	if(sizeof(MST) == G.n - 1){
-		done = true;
-	} 	
+	// final termination
+	if(sizeof(MST) == G.n - 1){done = true;}
 	
 	}
+	
 	return MST;
 }
 

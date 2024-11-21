@@ -36,7 +36,7 @@ else
 endif
 
 
-FILES=graph.cpp main.cpp sort/msort.cpp
+FILES=graph.cpp main.cpp disjointSet.cpp sort/msort.cpp
 
 SRC_DIR=${PROJECT_DIR}/src/
 

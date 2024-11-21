@@ -3,6 +3,8 @@
 #include <vector>
 #include <algorithm>
 
+using namespace std;
+
 struct Edge {
     int u;
     int v;
